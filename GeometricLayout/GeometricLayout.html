@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Coordinates and Table Locator</title>
+    <script src="../../Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(
+            function () {
+
+                $('#getCoOrdinates').click(
+                    function () {
+                        try {
+                            var row = $('#txtRowNumber').val();
+                            var column = $('#txtColumnNumber').val();
+                            var coordinates = $('#coordinatesList');
+                            console.log("row " + row);
+                            console.log("columnNumber " + column);
+                            if (row.length == '' || row == null || column.length == '' || column == null) {
+                                coordinates.empty();
+                                coordinates.append(
+                                    '<li style="color:red">Cannot calculate on null or empty values</li>');
+                            } else {
+                                document.body.style.cursor = 'wait';
+                                $.ajax({
+                                    type: 'GET',
+                                    url: "api/GeometricLayout?row=" + row + "&column=" + column,
+                                    dataType: 'json',
+                                    success: function (data) {
+                                        coordinates.empty();
+                                        $.each(data,
+                                            function (index, coordinate) {
+                                                console.log(coordinate.X + ", " + coordinate.Y);
+                                                var coOrdinateIntegrated = coordinate.X + ", " + coordinate.Y;
+                                                coordinates.append('<li>' + coOrdinateIntegrated + '</li>');
+                                            });
+
+                                        document.body.style.cursor = 'default';
+                                    },
+                                    error: function (xhr, errorType, exception)
+                                    {
+                                        coordinates.empty();
+                                        responseText = jQuery.parseJSON(xhr.responseText);
+
+                                        if (responseText.ModelState != undefined)
+                                        {
+                                            coordinates.empty();
+
+                                            if (responseText.ModelState.InValidRow != null)
+                                            {
+                                                coordinates.append('<li style="color:red">' + responseText.ModelState.InValidRow + '</li>');
+                                            }
+                                            if (responseText.ModelState.InValidColumn != null)
+                                            {
+                                                coordinates.append('<li style="color:red">' + responseText.ModelState.InValidColumn + '</li>');
+
+                                            }
+                                        }
+                                        else
+                                        {
+                                            coordinates.empty();
+                                            coordinates.append('<li style="color:red">' + responseText.Message + '</li>');
+
+                                        }
+                                        document.body.style.cursor = 'default';
+                                    }
+                                });
+                            }
+                        } catch (ex)
+                        {
+                            var coordinates = $('#coordinatesList');
+                            coordinates.empty();
+                            coordinates.append(
+                                '<li style="color:red">' + "Unexpected error occurred. More details : " + ex.Message + '</li>');
+                        }
+
+                    });
+
+
+
+                $('#getTriangleLocation').click(
+                    function () {
+                        try {
+                            var firstCoordinate_FirstPoint = $('#txtFirstCoordinate_FirstPoint').val();
+                            var firstCoordinate_SecondPoint = $('#txtFirstCoordinate_SecondPoint').val();
+                            var secondCoordinate_FirstPoint = $('#txtSecondCoordinate_FirstPoint').val();
+                            var secondCoordinate_SecondPoint = $('#txtSecondCoordinate_SecondPoint').val();
+                            var thirdCoordinate_FirstPoint = $('#txtThirdCoordinate_FirstPoint').val();
+                            var thirdCoordinate_SecondPoint = $('#txtThirdCoordinate_SecondPoint').val();
+
+
+                            var rowColumnInfo = $('#rowColumnInfo');
+                            rowColumnInfo.empty();
+                            if (firstCoordinate_FirstPoint.length == '' || firstCoordinate_SecondPoint.length == ''
+                                || secondCoordinate_FirstPoint.length == '' || secondCoordinate_SecondPoint.length == ''
+                                || thirdCoordinate_FirstPoint.length == '' || thirdCoordinate_SecondPoint.length == '')
+                            {
+                                rowColumnInfo.empty();
+                                rowColumnInfo.append('<li style="color:red">Cannot calculate on null or empty coordinates</li>');
+                            }
+                            else
+                            {
+                                var coordinatesInfo = [
+                                    { X: firstCoordinate_FirstPoint, Y: firstCoordinate_SecondPoint },
+                                    { X: secondCoordinate_FirstPoint, Y: secondCoordinate_SecondPoint },
+                                    { X: thirdCoordinate_FirstPoint, Y: thirdCoordinate_SecondPoint }
+                                ];
+                                var ss = JSON.stringify(coordinatesInfo);
+                                window.document.body.style.cursor = "wait";
+                                $.ajax({
+                                    contentType: 'application/json',
+                                    data: ss,
+                                    dataType: 'json',
+                                    type: 'POST',
+                                    url: "api/GeometricLayout",
+                                    success: function (triangleInfo)
+                                    {
+                                        rowColumnInfo.empty();
+                                        console.log(triangleInfo);
+                                        rowColumnInfo.append('<li>' + triangleInfo + '</li>');
+
+                                        document.body.style.cursor = 'default';
+                                    },
+                                    error: function (xhr, errorType, exception)
+                                    {
+                                        rowColumnInfo.empty();
+                                        responseText = jQuery.parseJSON(xhr.responseText);
+
+                                        if (responseText.ModelState != undefined)
+                                        {
+                                            rowColumnInfo.empty();
+                                            if (responseText.ModelState.InvalidCoordinates != null)
+                                            {
+                                                rowColumnInfo.append('<li style="color:red">' + responseText.ModelState.InvalidCoordinates + '</li>');
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            rowColumnInfo.empty();
+                                            rowColumnInfo.append('<li style="color:red">' + responseText.Message + '</li>');
+                                        }
+                                        window.document.body.style.cursor = 'default';
+                                    }
+                                });
+                            }
+                        }
+                        catch (ex)
+                        {
+                            var rowColumnInfo = $('#rowColumnInfo');
+                            rowColumnInfo.empty();
+                            rowColumnInfo.append(
+                                '<li style="color:red">' + "Unexpected error occurred. More details : " + ex.Message + '</li>');
+                        }
+
+                    });
+            });
+    </script>
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="padding-top: 20px">
+
+    <div class="col-md-10 col-md-offset-1">
+        <div class="well">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="success"><td colspan="2">Coordinate Locator</td></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Row</td>
+                        <td><input type="text" maxlength="1" id="txtRowNumber" name="rowNumber" /></td>
+                    </tr>
+                    <tr>
+                        <td>Column</td>
+                        <td><input type="number" maxlength="2" id="txtColumnNumber" name="columnNumber" /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <input class="bg-success" width="100px" id="getCoOrdinates" type="button" value="Get Triangle Coordinates" />
+        </div>
+        <ul class="list-group-item-success" id="coordinatesList">
+        </ul>
+    </div>
+
+    <div class="col-md-10 col-md-offset-1">
+        <div class="well">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="success"><td colspan="3">Location Locator</td></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>First Coordinate</td>
+                        <td><input type="number" maxlength="1" id="txtFirstCoordinate_FirstPoint" name="firstCoordinatefirstPoint" /></td>
+                        <td><input type="number" maxlength="1" id="txtFirstCoordinate_SecondPoint" name="firstCoordinateSecondPoint" /></td>
+                    </tr>
+                    <tr>
+                        <td>Second Coordinate</td>
+                        <td><input type="number" maxlength="1" id="txtSecondCoordinate_FirstPoint" name="secondCoordinatefirstPoint" /></td>
+                        <td><input type="number" maxlength="1" id="txtSecondCoordinate_SecondPoint" name="secondCoordinateSecondPoint" /></td>
+                    </tr>
+                    <tr>
+                        <td>Third Coordinate</td>
+                        <td><input type="number" maxlength="1" id="txtThirdCoordinate_FirstPoint" name="thirdCoordinatefirstPoint" /></td>
+                        <td><input type="number" maxlength="1" id="txtThirdCoordinate_SecondPoint" name="thirdCoordinateSecondPoint" /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <input class="bg-success" width="100px" id="getTriangleLocation" type="button" value="Get Triangle Location" />
+        </div>
+        <ul class="list-group-item-success" id="rowColumnInfo">
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.Data\bin\Debug\GeometricLayout.Data.dll
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.Data\bin\Debug\GeometricLayout.Data.pdb
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.Data\obj\Debug\GeometricLayout.Data.csproj.CoreCompileInputs.cache
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.Data\obj\Debug\GeometricLayout.Data.dll
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.Data\obj\Debug\GeometricLayout.Data.pdb
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.Data\obj\Debug\GeometricLayout.Data.csprojAssemblyReference.cache

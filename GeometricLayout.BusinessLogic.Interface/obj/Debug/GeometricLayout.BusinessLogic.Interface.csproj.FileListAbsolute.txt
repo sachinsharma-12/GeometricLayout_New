@@ -1,0 +1,16 @@
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.BusinessLogic.Interface\bin\Debug\GeometricLayout.BusinessLogic.Interface.dll.config
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.BusinessLogic.Interface\bin\Debug\GeometricLayout.BusinessLogic.Interface.dll
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.BusinessLogic.Interface\bin\Debug\GeometricLayout.BusinessLogic.Interface.pdb
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.BusinessLogic.Interface\bin\Debug\GeometricLayout.Common.dll
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.BusinessLogic.Interface\bin\Debug\Newtonsoft.Json.dll
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.BusinessLogic.Interface\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.BusinessLogic.Interface\bin\Debug\System.Web.Http.dll
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.BusinessLogic.Interface\bin\Debug\GeometricLayout.Common.pdb
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.BusinessLogic.Interface\bin\Debug\Newtonsoft.Json.xml
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.BusinessLogic.Interface\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.BusinessLogic.Interface\bin\Debug\System.Web.Http.xml
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.BusinessLogic.Interface\obj\Debug\GeometricLayout.BusinessLogic.Interface.csprojAssemblyReference.cache
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.BusinessLogic.Interface\obj\Debug\GeometricLayout.BusinessLogic.Interface.csproj.CoreCompileInputs.cache
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.BusinessLogic.Interface\obj\Debug\GeometricLayout.BusinessLogic.Interface.csproj.CopyComplete
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.BusinessLogic.Interface\obj\Debug\GeometricLayout.BusinessLogic.Interface.dll
+C:\Users\320068284\source\repos\GeometricLayout\GeometricLayout.BusinessLogic.Interface\obj\Debug\GeometricLayout.BusinessLogic.Interface.pdb

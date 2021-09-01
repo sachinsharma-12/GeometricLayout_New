@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometricLayout", "GeometricLayout\GeometricLayout.csproj", "{6353D903-14A8-4FD4-9FB0-94B64BB53E92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometricLayout.Tests", "GeometricLayout.Tests\GeometricLayout.Tests.csproj", "{DF8AAB51-8282-49B4-9BAD-0CF4BA7264BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometricLayout.BusinessLogic", "GeometricLayout.BusinessLogic\GeometricLayout.BusinessLogic.csproj", "{A0EBD32E-468D-4579-8AC3-4C1CEAEF66B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometricLayout.BusinessLogic.Interface", "GeometricLayout.BusinessLogic.Interface\GeometricLayout.BusinessLogic.Interface.csproj", "{22030BEA-81F0-48D8-868C-B138B4E73367}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometricLayout.Common", "GeometricLayout.Common\GeometricLayout.Common.csproj", "{1309BFCF-8713-4BD6-BC27-D699CC808496}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometricLayout.Data", "GeometricLayout.Data\GeometricLayout.Data.csproj", "{1669CC41-1A5E-4101-83B9-FAAB4E9BA615}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometricLayout.BusinessLogic.Test", "GeometricLayout.BusinessLogic.Test\GeometricLayout.BusinessLogic.Test.csproj", "{04762834-9031-4854-BCCB-F7B525142ECC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6353D903-14A8-4FD4-9FB0-94B64BB53E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6353D903-14A8-4FD4-9FB0-94B64BB53E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6353D903-14A8-4FD4-9FB0-94B64BB53E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6353D903-14A8-4FD4-9FB0-94B64BB53E92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF8AAB51-8282-49B4-9BAD-0CF4BA7264BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF8AAB51-8282-49B4-9BAD-0CF4BA7264BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF8AAB51-8282-49B4-9BAD-0CF4BA7264BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF8AAB51-8282-49B4-9BAD-0CF4BA7264BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0EBD32E-468D-4579-8AC3-4C1CEAEF66B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0EBD32E-468D-4579-8AC3-4C1CEAEF66B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0EBD32E-468D-4579-8AC3-4C1CEAEF66B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0EBD32E-468D-4579-8AC3-4C1CEAEF66B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22030BEA-81F0-48D8-868C-B138B4E73367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22030BEA-81F0-48D8-868C-B138B4E73367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22030BEA-81F0-48D8-868C-B138B4E73367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22030BEA-81F0-48D8-868C-B138B4E73367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1309BFCF-8713-4BD6-BC27-D699CC808496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1309BFCF-8713-4BD6-BC27-D699CC808496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1309BFCF-8713-4BD6-BC27-D699CC808496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1309BFCF-8713-4BD6-BC27-D699CC808496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1669CC41-1A5E-4101-83B9-FAAB4E9BA615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1669CC41-1A5E-4101-83B9-FAAB4E9BA615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1669CC41-1A5E-4101-83B9-FAAB4E9BA615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1669CC41-1A5E-4101-83B9-FAAB4E9BA615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04762834-9031-4854-BCCB-F7B525142ECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04762834-9031-4854-BCCB-F7B525142ECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04762834-9031-4854-BCCB-F7B525142ECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04762834-9031-4854-BCCB-F7B525142ECC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D203D38E-5FFF-48C9-AFB6-2EE0046711E8}
+	EndGlobalSection
+EndGlobal
